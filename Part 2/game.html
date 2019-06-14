@@ -1,0 +1,96 @@
+<!DOCTYPE html public "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <style>
+            html{
+                background-image: url("bg.jpg")
+            }   
+            table,td,th{
+                background-color: #caf7f3;
+                color: #330a84;
+                border: 3px solid forestgreen;
+                border-collapse: collapse;
+                text-align: center;
+            }
+        </style>
+        <title>Dice Game</title>
+        <script type="text/javascript">
+            //window.alert("Welcome to\nJavaScript\nProgramming")
+            //document.writeln("<h1>Welcome to");
+            //document.writeln(" java script</h1>");
+          /*  var value;
+            document.writeln("<h1>Random numbers</h1>"+
+            "<table border='1' width='50%'> <tr>");
+            for(var i=1;i<=20;i++)
+            { 
+                value=Math.floor(1+Math.random()*6);
+                document.writeln("<td>"+value+"</td>");
+                if(i%5==0 && i!=20)
+                    document.writeln("</tr><tr>")
+            }
+            document.writeln("</tr></table>")
+            var f1=0,f2=0,f3=0,f4=0,f5=0,f6=0,face;
+            for(var i=1;i<=6000;i++)
+            {   
+                face=Math.floor(1+Math.random()*6);
+                switch(face)
+                {
+                    case 1:f1++;break;
+                    case 2:f2++;break;
+                    case 3:f3++;break;
+                    case 4:f4++;break;
+                    case 5:f5++;break;
+                    case 6:f6++;
+                }
+            }
+            document.writeln("<br><table border='1' width='50%'> <tr>"+
+                "<th>Number</th><th>Frequency</th></tr>"+
+                "<tr><td>1</td><td>"+f1+"</td></tr>"+
+                "<tr><td>2</td><td>"+f2+"</td></tr>"+
+                "<tr><td>3</td><td>"+f3+"</td></tr>"+
+                "<tr><td>4</td><td>"+f4+"</td></tr>"+
+                "<tr><td>5</td><td>"+f5+"</td></tr>"+
+                "<tr><td>6</td><td>"+f6+"</td></tr>"+
+                "</table>");
+                */
+            var d1,d2,ds,res=0,dsp;
+            d2=Math.floor(1+Math.random()*6);
+            d1=Math.floor(1+Math.random()*6);
+            ds=d1+d2;
+            document.writeln("<br><table width='50%'> <tr>"+
+                "<th>Dice 1</th><th>Dice 2</th><th>Score</th></tr>"+
+                "<tr><td>"+d1+"</td><td>"+d2+"</td><td>"+ds+"</td></tr>");
+            //first turn
+            if(ds==7 || ds==11)
+            {
+                document.writeln("</table><h1 style='color:green'>You WIN</h1>");
+            }
+            else if(ds==2 || ds==3 || ds==12)
+            {
+                document.writeln("</table><h1 style='color:red'>You LOSE</h1>");
+            }
+            else
+            {
+                while(res==0)
+                {
+                    dsp=ds;
+                    d2=Math.floor(1+Math.random()*6);
+                    d1=Math.floor(1+Math.random()*6);
+                    ds=d1+d2;
+                    document.writeln("<tr><td>"+d1+"</td><td>"+d2+"</td><td>"+ds+"</td></tr>")
+                    if(ds==7 || ds==11) res = -1;
+                    else if(ds==dsp) res = 1;
+                    else res = 0;
+                }
+                if(res == 1) document.writeln("</table><h1 style='color:green'>You WIN</h1>");
+                else document.writeln("</table><h1 style='color:red'>You LOSE</h1>");
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+        <p>click refresh (or reload) to run this script again</p>
+    </body>
+</html>
